@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: skyblue; /* 하늘색 배경색 적용 */
+    color: white; 
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+h2 {
+    margin-top: 100px;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+
+
+.chart {
+    width: 740px;
+    height: 550px;
+    border: none;
+    margin-bottom: 100px;
+}
+
+.map {
+    width: 710px;
+    height: 600px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+input{
+    text-align: right;
+}
+
+/* 메뉴 스타일링 */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333333;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+}
+
+#navbar a:hover {
+    background-color: #555;
+}
+
+  /* 각 섹션의 스타일링 */
+section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+
+
+
+/* styles.css */
+
+/* 박스 전체 스타일링 */
+.stats-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 600px;
+    height: 200px;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  /* 제목 영역 스타일링 */
+  .title {
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  /* 내용 영역 스타일링 */
+  .content {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* 2개의 열로 나눔 */
+    gap: 10px; /* 각 영역 사이의 간격 */
+}
+  
+  /* 내용 영역의 각 부분 스타일링 */
+.content div {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* 섹션 스타일링 */
+.section {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 100px;
+    font-size: 24px; /* 섹션의 글자 크기 */
+    color: #666; /* 섹션의 글자 색상 */
+    font-weight: bold;
+}
+
+/* styles.css */
+
+/* 로그인 버튼 스타일링 */
+.login-btn {
+    position:fixed; /* 화면 고정 위치 */
+    /* 상단으로부터의 거리 */
+    top: 60px;
+    right: 20px; /* 우측으로부터의 거리 */
+    padding: 10px 20px; /* 내부 여백 */
+    background-color: #3498db; /* 배경색 (하늘색 느낌) */
+    color: #fff; /* 글자색 (흰색) */
+    text-decoration: none; /* 링크 기본 밑줄 제거 */
+    border-radius: 5px; /* 둥근 테두리 */
+    transition: background-color 0.3s; /* 배경색 변경 시 부드러운 애니메이션 적용 */
+    
+}
+
+.join-btn {
+    position:fixed; /* 화면 고정 위치 */
+    /* 상단으로부터의 거리 */
+    top:110px;
+    right: 20px; /* 우측으로부터의 거리 */
+    padding: 10px 20px; /* 내부 여백 */
+    background-color: #3498db; /* 배경색 (하늘색 느낌) */
+    color: #fff; /* 글자색 (흰색) */
+    text-decoration: none; /* 링크 기본 밑줄 제거 */
+    border-radius: 5px; /* 둥근 테두리 */
+    transition: background-color 0.3s; /* 배경색 변경 시 부드러운 애니메이션 적용 */
+    
+}
+  
+  /* 버튼에 호버 효과 추가 */
+  .login-btn:hover {
+    background-color: #2980b9; /* 호버 시 색상 변화 */
+  }
+  

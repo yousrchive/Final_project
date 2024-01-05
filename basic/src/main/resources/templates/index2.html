@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주요 교통사고 대시보드</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+    <!-- https://fonts.google.com/specimen/Kumbh+Sans -->
+    <link rel="stylesheet" href="../static/fontawesome/css/all.min.css"> <!-- https://fontawesome.com/-->
+    <link rel="stylesheet" href="../static/css/magnific-popup.css">
+    <!-- https://dimsemenov.com/plugins/magnific-popup/ -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css"> <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="../static/slick/slick.min.css"> <!-- https://kenwheeler.github.io/slick/ -->
+    <link rel="stylesheet" href="../static/slick/slick-theme.css">
+    <link rel="stylesheet" href="../static/css/templatemo-upright.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-KyVXi1hfxDglJ2st8Gnydi4C1Xoiim0mZvwGTw4KZ9ZC7vvZwOmmFVlTuGrx7p3jkKQax35DxmJVpESy7BPz1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+</head>
+
+<body style="background-color: transparent;">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Leftside bar -->
+            <div id="tm-sidebar" class="tm-sidebar">
+                <nav class="tm-nav">
+                    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div>
+                        <div class="tm-brand-box">
+                            <h1 class="tm-brand">Navigator</h1>
+                        </div>
+                        <ul id="tm-main-nav">
+                            <li class="nav-item">
+                                <a href="#home" class="nav-link current">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-home nav-icon"></i>
+                                    Home
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#contact" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-globe-asia nav-icon"></i>
+                                    로드뷰
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#total" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-images nav-icon"></i>
+                                    종합 정보
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#gallery" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-car-crash nav-icon"></i>
+                                    결빙 사고
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#frozen_news" class="nav-news">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-clipboard-list nav-icon"></i>
+                                    결빙 사고 기사
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#drunk" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-car-crash nav-icon"></i>
+                                    음주 사고
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#dnews" class="nav-news">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-clipboard-list nav-icon"></i>
+                                    음주 사고 기사
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#holiday" class="nav-link">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-car-crash nav-icon"></i>
+                                    연휴 사고
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#hnews" class="nav-news">
+                                    <div class="triangle-right"></div>
+                                    <i class="fas fa-clipboard-list nav-icon"></i>
+                                    연휴 사고 기사
+                                </a>
+                            </li>
+                
+                            <li class="nav-item">
+                                <a class="nav-link external" target="_parent" rel="sponsored" href="./loginPage">
+                                    <div class=" triangle-right">
+                    </div>
+                    <i class="fas fa-external-link-alt nav-icon"></i>
+                    로그인
+                    </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="#" class="nav-link external" target="_parent" rel="sponsored" class="nav-link"
+                            id="islogout" type="button" onclick="islogout()">
+                            <i class="fas fa-external-link-alt nav-icon"></i>
+                            로그아웃</a>
+                        <div class=" triangle-right"></div>
+                    </li>  -->
+                    </ul>
+            </div>
+
+            </nav>
+        </div>
+
+        <div class="tm-main">
+            <!-- Home section -->
+            <div class="tm-section-wrap">
+                <div class="tm-parallax" data-parallax="scroll" data-image-src="img/img-01.jpg"></div>
+                <section id="home" class="tm-section">
+                    <h2 class="tm-text-primary">실시간 날씨 기온</h2>
+                    <hr class="mb-5">
+                    <div class="row">
+                        <div class="col-lg-6 tm-col-home mb-4">
+                            <button class="weather-btn" onclick="getWeather('Seoul')">서울</button>
+                            <button class="weather-btn" onclick="getWeather('Busan')">부산</button>
+                            <button class="weather-btn" onclick="getWeather('Daegu')">대구</button>
+                            <button class="weather-btn" onclick="getWeather('Gyeonggi-do')">경기</button>
+                            <button class="weather-btn" onclick="getWeather('Incheon')">인천</button>
+                            <button class="weather-btn" onclick="getWeather('Daejeon')">대전</button>
+                            <button class="weather-btn" onclick="getWeather('Gwangju')">광주</button>
+                            <button class="weather-btn" onclick="getWeather('Gangneung', 'Sokcho')">강원</button>
+                            <button class="weather-btn" onclick="getWeather('Ulsan')">울산</button>
+                            <button class="weather-btn" onclick="getWeather('Sejong')">충청</button>
+                            <button class="weather-btn" onclick="getWeather('Mokpo')">전라</button>
+                            <button class="weather-btn" onclick="getWeather('Changwon')">경상</button>
+                            <button class="weather-btn" onclick="getWeather('Jeju')">제주</button>
+                            <!-- 원하는 지역 버튼을 추가할 수 있습니다. -->
+                            <div id="weather-container">
+                                <!-- 날씨 정보가 표시될 곳 -->
+                                <script>
+                                    // OpenWeatherMap API 키
+                                    const apiKey = '2f40a6b63771f57f788b6387e107c062';
+                                    // API 호출 함수
+                                    async function getWeather(city) {
+                                        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+                                        const data = await response.json();
+                                        // 날씨 정보를 표시하는 함수 호출
+                                        displayWeather(data);
+                                    }
+                                // 날씨 정보를 표시하는 함수
+                            function displayWeather(data) {
+                                const weatherContainer = document.getElementById('weather-container');
+                                weatherContainer.innerHTML = '';
+                                
+                                const cityName = document.createElement('h2');
+                                cityName.textContent = data.name;
+                                weatherContainer.appendChild(cityName);
+
+                                const temperature = document.createElement('p');
+                                temperature.textContent = `온도: ${data.main.temp}°C`;
+                                weatherContainer.appendChild(temperature);
+
+                                const description = document.createElement('p');
+                                description.textContent = `날씨: ${data.weather[0].description}`;
+                                weatherContainer.appendChild(description);
+
+                                const weatherImage = document.createElement('img');
+                                // 날씨에 따라 이미지 설정 (예: 일반적인 날씨 상태 기준)
+                                switch(data.weather[0].main) {
+                                    case 'Clear':
+                                        weatherImage.src = 'data:image/jpeg;base64,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';
+                                        weatherImage.width = 80; // 이미지 너비
+                                        weatherImage.height = 80; // 이미지 높이
+                                        break;
+                                    case 'Clouds':
+                                        weatherImage.src = 'data:image/jpeg;base64,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';
+                                        weatherImage.width = 80; // 이미지 너비
+                                        weatherImage.height = 80; // 이미지 높이
+                                        break;
+                                    case 'Rain':
+                                        weatherImage.src = 'data:image/png;base64,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';
+                                        weatherImage.width = 80; // 이미지 너비
+                                        weatherImage.height = 80; // 이미지 높이
+                                    case 'Snow':
+                                        weatherImage.src = 'data:image/png;base64,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';
+                                        weatherImage.width = 80; // 이미지 너비
+                                        weatherImage.height = 80; // 이미지 높이
+                                        break;
+                                    // 다른 날씨 상태에 대한 이미지도 추가할 수 있습니다.
+                                    default:
+                                        weatherImage.src = 'https://default_image_url.jpg';
+                                }
+
+                                weatherContainer.appendChild(weatherImage);
+                            }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row tm-row-home">
+                        <div class="tm-col-home tm-col-home-l">
+                            <div class="media mb-4">
+                                
+                                <div class="media-body"></div>
+                            </div>
+                        </div>
+                        <div class="media mb-4">
+                            
+                            <div class="media-body">
+                                <a href="#" class="d-block mb-2 tm-text-primary tm-post-link"></a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="tm-col-home mr-0 ml-auto">
+            </div>
+        </div>
+        </section>
+    </div>
+<!-- Contact section -->
+<div class="tm-section-wrap">
+    <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-05jpg.jpg"></div>
+    <div id="contact" class="tm-section">
+        <h2 class="tm-text-primary">사고 지역 로드뷰</h2>
+        <hr class="mb-5">
+        <div class="row">
+            <div class="col-xl-6 tm-contact-col-l mb-4">
+                <form id="contact-form" action="" method="POST" class="tm-contact-form">
+                    <div class="form-group">
+                        <h3>사고 발생 지도</h3>
+                        <div id="map1" style="width:100%;height:350px;"></div>
+                            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=65660613517dc4b3d166da88513858dd"></script>
+                            <script>
+                            var mapContainer1 = document.getElementById('map1'),
+                                mapOption1 = {
+                                    center: new kakao.maps.LatLng(37.524665766713, 127.052190456925),
+                                    level: 5
+                                };
+
+                            var map1= new kakao.maps.Map(mapContainer1, mapOption1);
+
+                            var positions = [
+                                {
+                                    title: '서울특별시 종로구 창신동(동묘앞역 부근)',
+                                    latlng: new kakao.maps.LatLng(37.566157072991, 126.983858947134)
+                                },
+                                {
+                                    title: '서울특별시 중구 을지로2가(을지로1가을지로진출1 부근)',
+                                    latlng: new kakao.maps.LatLng(37.54183637415, 127.02897292766)
+                                },
+                                {
+                                    title: '지점명:서울특별시 성동구 성수동1가(동부간선도로강변북로 부근)',
+                                    latlng: new kakao.maps.LatLng(37.541293955253, 127.071130654057)
+                                },
+                                {
+                                    title: '서울특별시 광진구 화양동(건대입구역 부근)',
+                                    latlng: new kakao.maps.LatLng(37.560578125981, 127.069819950631)
+                                },
+                                {
+                                    title: '서울특별시 동대문구 장안동(동부간선도로천호대로 부근)',
+                                    latlng: new kakao.maps.LatLng(37.56692083393, 127.062745086618)
+                                },
+                                {
+                                    title: '서울특별시 동대문구 장안동(장안유도관 부근)',
+                                    latlng: new kakao.maps.LatLng(37.661225768955, 127.058132160772)
+                                },
+                                {
+                                    title: '서울특별시 노원구 상계동(상계79단지 부근)',
+                                    latlng: new kakao.maps.LatLng(37.560578125981, 127.069819950631)
+                                },
+                                {
+                                    title: '서울특별시 노원구 상계동(노원지하차도남측 부근)',
+                                    latlng: new kakao.maps.LatLng(37.651741497073, 127.055493576868)
+                                },
+                                {
+                                    title: '서울특별시 노원구 상계동(노원역 부근)',
+                                    latlng: new kakao.maps.LatLng(37.626749475909, 127.075619055276)
+                                },
+                                {
+                                    title: '서울특별시 은평구 역촌동(역촌사거리 부근)',
+                                    latlng: new kakao.maps.LatLng(37.559248163573, 126.832251717744)
+                                },
+                                {
+                                    title: '서울특별시 강서구 가양동(내발산삼거리 부근)',
+                                    latlng: new kakao.maps.LatLng(37.560735786129, 126.819693153917)
+                                },
+                                {
+                                    title: '서울특별시 동작구 동작동(서초구동작구경계4 부근)',
+                                    latlng: new kakao.maps.LatLng(37.46688151577, 126.948226848991)
+                                },
+                                {
+                                    title: '서울특별시 관악구 신림동(서울대운동장관악로진 부근)',
+                                    latlng: new kakao.maps.LatLng(37.516220683938, 127.019608851069)
+                                },
+                                {
+                                    title: '서울특별시 서초구 잠원동(신사역 부근)',
+                                    latlng: new kakao.maps.LatLng(37.499953724286, 127.033625266294)
+                                },
+                                                                    {
+                                    title: '지점명:서울특별시 강남구 역삼동(뱅뱅사거리 부근)',
+                                    latlng: new kakao.maps.LatLng(37.524665766713, 127.052190456925)
+                                },
+                                                                    {
+                                    title: '서울특별시 강남구 청담동(영동대교남단삼거리도 부근)',
+                                    latlng: new kakao.maps.LatLng(37.524295867461, 127.047371598022)
+                                },
+                                                                    {
+                                    title: '서울특별시 강남구 논현동(청담사거리 부근)',
+                                    latlng: new kakao.maps.LatLng(37.478365612784, 127.114276844202)
+                                },
+                                                                    {
+                                    title: '서울특별시 송파구 문정동(숯내교서단 부근)',
+                                    latlng: new kakao.maps.LatLng(37.438661566979, 126.681923479886)
+                                },
+                                                                    {
+                                    title: '서울특별시 노원구 공릉동(미건의료기 부근)',
+                                    latlng: new kakao.maps.LatLng(37.608060353304, 126.920107616175)
+                                }
+                                
+                            ];
+                            var markers = [];
+
+                            var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+                            var imageSize = new kakao.maps.Size(24, 35);
+                            var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+                            for (var i = 0; i < positions.length; i++) {
+                                var marker = new kakao.maps.Marker({
+                                    map: map1,
+                                    position: positions[i].latlng,
+                                    title: positions[i].title,
+                                    image: markerImage
+                                });
+
+                                markers.push(marker); // 마커를 배열에 추가
+
+                                // 마커를 클릭했을 때 로드뷰로 이동하는 이벤트 리스너 등록
+                                kakao.maps.event.addListener(marker, 'click', function () {
+                                    var position = this.getPosition(); // 클릭한 마커의 좌표 가져오기
+
+                                    // 가까운 로드뷰의 panoId를 추출하여 로드뷰 이동
+                                    roadviewClient.getNearestPanoId(position, 50, function (panoId) {
+                                        roadview.setPanoId(panoId, position);
+                                    });
+                                });
+                            }
+                            </script>
+                            <br><br>
+                            <h3>사고 발생 Road View</h3>
+                            <!-- 로드뷰를 표시할 div 입니다 -->
+                            <div id="roadview" style="width:100%;height:350px;"></div>
+
+                            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=65660613517dc4b3d166da88513858dd"></script>
+                            <script>
+                            var roadviewContainer = document.getElementById('roadview');
+                            var roadview = new kakao.maps.Roadview(roadviewContainer);
+                            var roadviewClient = new kakao.maps.RoadviewClient();
+
+                            var position = new kakao.maps.LatLng(37.524665766713, 127.052190456925);
+
+                            roadviewClient.getNearestPanoId(position, 50, function (panoId) {
+                                roadview.setPanoId(panoId, position);
+                            });
+                            </script>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xl-6 tm-contact-col-r">
+                <!-- Map -->
+                <!-- 삭제 -->
+                <!-- Address -->
+                <!-- 삭제-->
+
+                <!-- Links -->
+                <ul class="tm-contact-links mb-4">
+                    <li class="mb-2">
+                        <a href="tel:119">
+                            <i class="fas fa-phone mr-2 tm-contact-link-icon"></i>
+                            119에 교통 사고 신고
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:jiseo33668@gmail.com">
+                            <i class="fas fa-at mr-2 tm-contact-link-icon"></i>
+                            사이트 교통 사고 정보 제보 
+                        </a>
+                    </li>
+                </ul>
+                <!-- <ul class="tm-contact-social">
+                    <li><a href="https://fb.com/templatemo" class="tm-social-link"><i
+                                class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com" class="tm-social-link"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://instagram.com" class="tm-social-link"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li><a href="https://youtube.com" class="tm-social-link"><i class="fab fa-youtube"></i></a></li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- total section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-01.jpg"></div>
+        <section id="total" class="tm-section">
+            <h2 class="tm-text-primary">종합 정보</h2>
+            <hr class="mb-5">
+            <ul class="tm-total-links">
+                <li>
+                    <a href="javascript:void(0);" class="active tm-total-link" data-filter="*">
+                        <i class="fas fa-layer-group tm-total-link-icon"></i>
+                        All
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-total-link" data-filter="portrait">
+                        <i class="fas fa-portrait tm-total-link-icon"></i>
+                        차트
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-total-link" data-filter="nature">
+                        <i class="fas fa-leaf tm-total-link-icon"></i>
+                        지도
+                    </a>
+                </li>
+            </ul>
+            <div class="tm-total">
+                <figure class="effect-honey tm-total-item portrait">
+                    <iframe src="http://127.0.0.1:5500/src/main/resources/static/totalchart.html"
+                        allowTransparency="true"></iframe>
+                </figure>
+                <figure class="effect-honey tm-total-item nature">
+                    <iframe src="http://127.0.0.1:5500/src/main/resources/static/total_map.html"
+                        allowTransparency="true"></iframe>
+                </figure>
+            </div>
+        </section>
+    </div>
+
+    <!-- Gallery section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-02.jpg"></div>
+        <section id="gallery" class="tm-section">
+            <h2 class="tm-text-primary">결빙 사고</h2>
+            <hr class="mb-5">
+            <ul class="tm-gallery-links">
+                <li>
+                    <a href="javascript:void(0);" class="active tm-gallery-link" data-filter="*">
+                        <i class="fas fa-layer-group tm-gallery-link-icon"></i>
+                        All
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-gallery-link" data-filter="portrait">
+                        <i class="fas fa-portrait tm-gallery-link-icon"></i>
+                        차트
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-gallery-link" data-filter="nature">
+                        <i class="fas fa-leaf tm-gallery-link-icon"></i>
+                        지도
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-gallery-link" data-filter="animal">
+                        <i class="fas fa-paw tm-gallery-link-icon"></i>
+                        예방법
+                    </a>
+                </li>
+            </ul>
+            <div class="tm-gallery">
+                <figure class="effect-honey tm-gallery-item portrait">
+
+                    <iframe src="http://127.0.0.1:5500/src/main/resources/static/ice_chart.html"
+                        allowTransparency="true"></iframe>
+                    
+                </figure>
+                
+                <figure class="effect-honey tm-gallery-item nature">
+                    <iframe src="http://127.0.0.1:5500/src/main/resources/static/ice_map.html"
+                        allowTransparency="true"></iframe>
+                
+                </figure>
+            
+                    <figure class="effect-honey tm-gallery-item animal">
+                    <div class="clickable-image" data-url="http://www.newspeople.co.kr/m/view.jsp?ncd=4546">
+                        <img src="../static/img/frezing1.jpg" alt="Image" />
+                        </div>
+                    </figure>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- news section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" ></div>
+        <section id="frozen_news" class="tm-section">
+            <h2 class="tm-text-primary">결빙사고 기사</h2>
+            <hr class="mb-5">
+            <ul class="tm-news-links">
+    
+        
+                <li>
+                    <a href="javascript:void(0);" class="tm-news-link" data-filter="Seoul">
+                      
+                        서울
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-news-link" data-filter="Busan">
+                     
+                        부산
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-news-link" data-filter="Daegu">
+                      
+                        대구
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-news-link" data-filter="Gyeonggi-do">
+                        
+                        경기
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-news-link" data-filter="Incheon">
+                        
+                        인천
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-news-link" data-filter="Daejeon">
+                       
+                        대전
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-news-link" data-filter="Gwangju">
+                       
+                        광주
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-news-link" data-filter="Gangneung">
+                        
+                        강원
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-news-link" data-filter="Ulsan">
+                        
+                        울산
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-news-link" data-filter="Sejong">
+                        
+                        충청
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-news-link" data-filter="Mokpo">
+                        
+                        전라
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-news-link" data-filter="Changwon">
+                        
+                        경상
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-news-link" data-filter="Jeju">
+                        
+                        제주
+                    </a>
+                </li>
+            </ul>
+            <div class="tm-news">
+                <figure class="effect-honey tm-news-item Seoul">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="iceList, iterStat : ${iceList}" th:if="${iceList.local1 == '서울'}">
+                                
+                                <td>
+                                    <a th:href="${iceList.url}" target="_blank" th:text="${iceList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(iceList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+
+                </figure>
+                <figure class="effect-honey tm-news-item Busan">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="iceList, iterStat : ${iceList}" th:if="${iceList.local1 == '부산'}">
+                                
+                                <td>
+                                    <a th:href="${iceList.url}" target="_blank" th:text="${iceList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(iceList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </figure>
+                <figure class="effect-honey tm-news-item Daegu">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="iceList, iterStat : ${iceList}" th:if="${iceList.local1 == '대구'}">
+                                
+                                <td>
+                                    <a th:href="${iceList.url}" target="_blank" th:text="${iceList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(iceList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </figure>
+                <figure class="effect-honey tm-news-item Gyeonggi-do">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="iceList, iterStat : ${iceList}" th:if="${iceList.local1 == '경기'}">
+                                
+                                <td>
+                                    <a th:href="${iceList.url}" target="_blank" th:text="${iceList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(iceList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </figure>
+                <figure class="effect-honey tm-news-item Incheon">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="iceList, iterStat : ${iceList}" th:if="${iceList.local1 == '인천'}">
+                                
+                                <td>
+                                    <a th:href="${iceList.url}" target="_blank" th:text="${iceList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(iceList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </figure>
+                <figure class="effect-honey tm-news-item Daejeon">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="iceList, iterStat : ${iceList}" th:if="${iceList.local1 == '대전'}">
+                                
+                                <td>
+                                    <a th:href="${iceList.url}" target="_blank" th:text="${iceList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(iceList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </figure>
+                <figure class="effect-honey tm-news-item Gwangju">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="iceList, iterStat : ${iceList}" th:if="${iceList.local1 == '광주'}">
+                                
+                                <td>
+                                    <a th:href="${iceList.url}" target="_blank" th:text="${iceList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(iceList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </figure>
+                <figure class="effect-honey tm-news-item Gangneung">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="iceList, iterStat : ${iceList}" th:if="${iceList.local1 == '강원'}">
+                                
+                                <td>
+                                    <a th:href="${iceList.url}" target="_blank" th:text="${iceList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(iceList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </figure>
+                <figure class="effect-honey tm-news-item Ulsan">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목</th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="iceList, iterStat : ${iceList}" th:if="${iceList.local1 == '울산'}">
+                                
+                                <td>
+                                    <a th:href="${iceList.url}" target="_blank" th:text="${iceList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(iceList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </figure>
+                <figure class="effect-honey tm-news-item Sejong">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="iceList, iterStat : ${iceList}" th:if="${iceList.local1 == '세종'}">
+                                
+                                <td>
+                                    <a th:href="${iceList.url}" target="_blank" th:text="${iceList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(iceList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </figure>
+                <figure class="effect-honey tm-news-item Mokpo">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="iceList, iterStat : ${iceList}" th:if="${iceList.local1 == '전라'}">
+                                
+                                <td>
+                                    <a th:href="${iceList.url}" target="_blank" th:text="${iceList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(iceList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </figure>
+                <figure class="effect-honey tm-news-item Changwon">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="iceList, iterStat : ${iceList}" th:if="${iceList.local1 == '경상'}">
+                                
+                                <td>
+                                    <a th:href="${iceList.url}" target="_blank" th:text="${iceList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(iceList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </figure>
+                <figure class="effect-honey tm-news-item Jeju">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="iceList, iterStat : ${iceList}" th:if="${iceList.local1 == '제주'}">
+                                
+                                <td>
+                                    <a th:href="${iceList.url}" target="_blank" th:text="${iceList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(iceList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </figure>
+            </div>
+        </section>
+    </div>
+
+    <!-- drunk section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-03.jpg"></div>
+        <section id="drunk" class="tm-section">
+            <h2 class="tm-text-primary">음주 사고</h2>
+            <hr class="mb-5">
+            <ul class="tm-drunk-links">
+                <li>
+                    <a href="javascript:void(0);" class="active tm-drunk-link" data-filter="*">
+                        <i class="fas fa-layer-group tm-drunk-link-icon"></i>
+                        All
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-drunk-link" data-filter="portrait">
+                        <i class="fas fa-portrait tm-drunk-link-icon"></i>
+                        차트
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-drunk-link" data-filter="nature">
+                        <i class="fas fa-leaf tm-drunk-link-icon"></i>
+                        지도
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-drunk-link" data-filter="animal">
+                        <i class="fas fa-paw tm-drunk-link-icon"></i>
+                        예방법
+                    </a>
+                </li>
+            </ul>
+            <div class="tm-drunk">
+                <figure class="effect-honey tm-drunk-item portrait">
+
+                    <iframe src="http://127.0.0.1:5500/src/main/resources/static/drunk_chart.html"
+                        allowTransparency="true"></iframe>
+
+                </figure>
+                <figure class="effect-honey tm-drunk-item nature">
+                    <iframe src="http://127.0.0.1:5500/src/main/resources/static/drunk_map.html"
+                        allowTransparency="true"></iframe>
+
+                </figure>
+                <figure class="effect-honey tm-drunk-item animal">
+                
+                        <figure class="effect-honey tm-drunk-item animal">
+                            <a href="https://blog.naver.com/loveacrc/222143004381">
+                            <img src="../static/img/drunk1.jpg" alt="Image" />
+                        </figure>
+                    </a>
+                </figure>
+            </div>
+        </section>
+    </div>
+
+    <!-- dnews section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll"></div>
+        <section id="dnews" class="tm-section">
+            <h2 class="tm-text-primary">음주사고 기사</h2>
+            <hr class="mb-5">
+            <ul class="tm-dnews-links">
+                <li>
+                    <a href="javascript:void(0);" class="tm-dnews-link" data-filter="Seoul">
+                      
+                        서울
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-dnews-link" data-filter="Busan">
+                     
+                        부산
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-dnews-link" data-filter="Daegu">
+                      
+                        대구
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-dnews-link" data-filter="Gyeonggi-do">
+                        
+                        경기
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-dnews-link" data-filter="Incheon">
+                        
+                        인천
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-dnews-link" data-filter="Daejeon">
+                       
+                        대전
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-dnews-link" data-filter="Gwangju">
+                       
+                        광주
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-dnews-link" data-filter="Gangneung">
+                        
+                        강원
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-dnews-link" data-filter="Ulsan">
+                        
+                        울산
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-dnews-link" data-filter="Sejong">
+                        
+                        충청
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-dnews-link" data-filter="Mokpo">
+                        
+                        전라
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-dnews-link" data-filter="Changwon">
+                        
+                        경상
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-dnews-link" data-filter="Jeju">
+                        
+                        제주
+                    </a>
+                </li>
+            </ul>
+            <div class="tm-dnews">
+                <figure class="effect-honey tm-dnews-item Seoul">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="drunkList, iterStat : ${drunkList}" th:if="${drunkList.local1 == '서울'}">
+                                
+                                <td>
+                                    <a th:href="${drunkList.url}" target="_blank" th:text="${drunkList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(drunkList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </figure>
+                <figure class="effect-honey tm-dnews-item Busan">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="drunkList, iterStat : ${drunkList}" th:if="${drunkList.local1 == '부산'}">
+                                
+                                <td>
+                                    <a th:href="${drunkList.url}" target="_blank" th:text="${drunkList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(drunkList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-dnews-item Daegu">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="drunkList, iterStat : ${drunkList}" th:if="${drunkList.local1 == '대구'}">
+                                
+                                <td>
+                                    <a th:href="${drunkList.url}" target="_blank" th:text="${drunkList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(drunkList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-dnews-item Gyeonggi-do">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="drunkList, iterStat : ${drunkList}" th:if="${drunkList.local1 == '경기'}">
+                                
+                                <td>
+                                    <a th:href="${drunkList.url}" target="_blank" th:text="${drunkList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(drunkList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-dnews-item Incheon">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="drunkList, iterStat : ${drunkList}" th:if="${drunkList.local1 == '인천'}">
+                                
+                                <td>
+                                    <a th:href="${drunkList.url}" target="_blank" th:text="${drunkList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(drunkList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-dnews-item Daejeon">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="drunkList, iterStat : ${drunkList}" th:if="${drunkList.local1 == '대전'}">
+                                
+                                <td>
+                                    <a th:href="${drunkList.url}" target="_blank" th:text="${drunkList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(drunkList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-dnews-item Gwangju">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="drunkList, iterStat : ${drunkList}" th:if="${drunkList.local1 == '광주'}">
+                                
+                                <td>
+                                    <a th:href="${drunkList.url}" target="_blank" th:text="${drunkList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(drunkList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-dnews-item Gangneung">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="drunkList, iterStat : ${drunkList}" th:if="${drunkList.local1 == '강원'}">
+                                
+                                <td>
+                                    <a th:href="${drunkList.url}" target="_blank" th:text="${drunkList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(drunkList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-dnews-item Ulsan">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="drunkList, iterStat : ${drunkList}" th:if="${drunkList.local1 == '울산'}">
+                                
+                                <td>
+                                    <a th:href="${drunkList.url}" target="_blank" th:text="${drunkList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(drunkList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-dnews-item Sejong">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="drunkList, iterStat : ${drunkList}" th:if="${drunkList.local1 == '충청'}">
+                                
+                                <td>
+                                    <a th:href="${drunkList.url}" target="_blank" th:text="${drunkList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(drunkList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-dnews-item Mokpo">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="drunkList, iterStat : ${drunkList}" th:if="${drunkList.local1 == '전라'}">
+                                
+                                <td>
+                                    <a th:href="${drunkList.url}" target="_blank" th:text="${drunkList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(drunkList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-dnews-item Changwon">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="drunkList, iterStat : ${drunkList}" th:if="${drunkList.local1 == '경상'}">
+                                
+                                <td>
+                                    <a th:href="${drunkList.url}" target="_blank" th:text="${drunkList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(drunkList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-dnews-item Jeju">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="drunkList, iterStat : ${drunkList}" th:if="${drunkList.local1 == '제주'}">
+                                
+                                <td>
+                                    <a th:href="${drunkList.url}" target="_blank" th:text="${drunkList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(drunkList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>      
+                    </figure>
+            </div>
+        </section>
+    </div>
+                   <!-- <h1>News List</h1>
+
+                    <table border="1">
+                        <thead>
+                        <tr>
+                        <th>Local1</th>
+                        <th>Title</th>
+                    <th>URL</th>
+                    <th>Date1</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{#newsList}}
+                    <tr>
+                <td>{{local1}}</td>
+                <td>{{title}}</td>
+                <td>{{url}}</td>
+                <td>{{date1}}</td>
+            </tr>
+            {{/newsList}}
+        </tbody>
+    </table> 
+                    </div>-->
+    <!-- holiday section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" data-image-src="../static/img/img-04.jpg"></div>
+        <section id="holiday" class="tm-section">
+            <h2 class="tm-text-primary">연휴 사고</h2>
+            <hr class="mb-5">
+            <ul class="tm-holiday-links">
+                <li>
+                    <a href="javascript:void(0);" class="active tm-holiday-link" data-filter="*">
+                        <i class="fas fa-layer-group tm-holiday-link-icon"></i>
+                        All
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-holiday-link" data-filter="portrait">
+                        <i class="fas fa-portrait tm-holiday-link-icon"></i>
+                        차트
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-holiday-link" data-filter="nature">
+                        <i class="fas fa-leaf tm-holiday-link-icon"></i>
+                        지도
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="tm-holiday-link" data-filter="animal">
+                        <i class="fas fa-paw tm-holiday-link-icon"></i>
+                        예방법
+                    </a>
+                </li>
+            </ul>
+            <div class="tm-holiday">
+                <figure class="effect-honey tm-holiday-item portrait">
+
+                    <iframe src="http://127.0.0.1:5500/src/main/resources/static/tmzone_chart.html"
+                        allowTransparency="true"></iframe>
+
+                </figure>
+                <figure class="effect-honey tm-holiday-item nature">
+                    <iframe src="http://127.0.0.1:5500/src/main/resources/static/tmzone_map.html"
+                        allowTransparency="true"></iframe>
+
+                </figure>
+                <figure class="effect-honey tm-holiday-item animal">
+                    <a href="https://m.blog.naver.com/ksea1004/222862212171">
+                        <figure class="effect-honey tm-gallery-item animal">
+                            <img src="../static/img/timezone1.png" alt="Image" />
+                
+                </figure>
+            </div>
+        </section>
+    </div>
+
+    <!-- hnews section -->
+    <div class="tm-section-wrap">
+        <div class="tm-parallax" data-parallax="scroll" ></div>
+        <section id="hnews" class="tm-section">
+            <h2 class="tm-text-primary">연휴사고 기사</h2>
+            <hr class="mb-5">
+            <ul class="tm-hnews-links">
+         
+                    <li>
+                        <a href="javascript:void(0);" class="tm-hnews-link" data-filter="Seoul">
+                          
+                            서울
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="tm-hnews-link" data-filter="Busan">
+                         
+                            부산
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="tm-hnews-link" data-filter="Daegu">
+                          
+                            대구
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="tm-hnews-link" data-filter="Gyeonggi-do">
+                            
+                            경기
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="tm-hnews-link" data-filter="Incheon">
+                            
+                            인천
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="tm-hnews-link" data-filter="Daejeon">
+                           
+                            대전
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="tm-hnews-link" data-filter="Gwangju">
+                           
+                            광주
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="tm-hnews-link" data-filter="Gangneung">
+                            
+                            강원
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="tm-hnews-link" data-filter="Ulsan">
+                            
+                            울산
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="tm-hnews-link" data-filter="Sejong">
+                            
+                            충청
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="tm-hnews-link" data-filter="Mokpo">
+                            
+                            전라
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="tm-hnews-link" data-filter="Changwon">
+                            
+                            경상
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="tm-hnews-link" data-filter="Jeju">
+                            
+                            제주
+                        </a>
+                    </li>
+            </ul>
+            <div class="tm-hnews">
+                <figure class="effect-honey tm-hnews-item Seoul">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="tmzoneList, iterStat : ${tmzoneList}" th:if="${tmzoneList.local1 == '서울'}">
+                                
+                                <td>
+                                    <a th:href="${tmzoneList.url}" target="_blank" th:text="${tmzoneList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(tmzoneList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </figure>
+                <figure class="effect-honey tm-hnews-item Busan">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="tmzoneList, iterStat : ${tmzoneList}" th:if="${tmzoneList.local1 == '부산'}">
+                                
+                                <td>
+                                    <a th:href="${tmzoneList.url}" target="_blank" th:text="${tmzoneList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(tmzoneList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-hnews-item Daegu">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="tmzoneList, iterStat : ${tmzoneList}" th:if="${tmzoneList.local1 == '대구'}">
+                                
+                                <td>
+                                    <a th:href="${tmzoneList.url}" target="_blank" th:text="${tmzoneList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(tmzoneList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-hnews-item Gyeonggi-do">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="tmzoneList, iterStat : ${tmzoneList}" th:if="${tmzoneList.local1 == '경기'}">
+                                
+                                <td>
+                                    <a th:href="${tmzoneList.url}" target="_blank" th:text="${tmzoneList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(tmzoneList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-hnews-item Incheon">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="tmzoneList, iterStat : ${tmzoneList}" th:if="${tmzoneList.local1 == '인천'}">
+                                
+                                <td>
+                                    <a th:href="${tmzoneList.url}" target="_blank" th:text="${tmzoneList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(tmzoneList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-hnews-item Daejeon">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="tmzoneList, iterStat : ${tmzoneList}" th:if="${tmzoneList.local1 == '대전'}">
+                                
+                                <td>
+                                    <a th:href="${tmzoneList.url}" target="_blank" th:text="${tmzoneList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(tmzoneList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-hnews-item Gwangju">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="tmzoneList, iterStat : ${tmzoneList}" th:if="${tmzoneList.local1 == '광주'}">
+                                
+                                <td>
+                                    <a th:href="${tmzoneList.url}" target="_blank" th:text="${tmzoneList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(tmzoneList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-hnews-item Gangneung">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="tmzoneList, iterStat : ${tmzoneList}" th:if="${tmzoneList.local1 == '강원'}">
+                                
+                                <td>
+                                    <a th:href="${tmzoneList.url}" target="_blank" th:text="${tmzoneList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(tmzoneList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-hnews-item Ulsan">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="tmzoneList, iterStat : ${tmzoneList}" th:if="${tmzoneList.local1 == '울산'}">
+                                
+                                <td>
+                                    <a th:href="${tmzoneList.url}" target="_blank" th:text="${tmzoneList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(tmzoneList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-hnews-item Sejong">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="tmzoneList, iterStat : ${tmzoneList}" th:if="${tmzoneList.local1 == '충청'}">
+                                
+                                <td>
+                                    <a th:href="${tmzoneList.url}" target="_blank" th:text="${tmzoneList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(tmzoneList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-hnews-item Mokpo">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="tmzoneList, iterStat : ${tmzoneList}" th:if="${tmzoneList.local1 == '전라'}">
+                                
+                                <td>
+                                    <a th:href="${tmzoneList.url}" target="_blank" th:text="${tmzoneList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(tmzoneList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-hnews-item Changwon">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="tmzoneList, iterStat : ${tmzoneList}" th:if="${tmzoneList.local1 == '경상'}">
+                                
+                                <td>
+                                    <a th:href="${tmzoneList.url}" target="_blank" th:text="${tmzoneList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(tmzoneList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>                </figure>
+                <figure class="effect-honey tm-hnews-item Jeju">
+                    <div class="table-wrapper-ice">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+
+                                <th> 기사 제목 </th>
+                                <th> 날짜 </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="tmzoneList, iterStat : ${tmzoneList}" th:if="${tmzoneList.local1 == '제주'}">
+                                
+                                <td>
+                                    <a th:href="${tmzoneList.url}" target="_blank" th:text="${tmzoneList.title}"></a>
+                                </td>
+                                <td th:text="${#dates.format(tmzoneList.date1, 'yyyy-MM-dd')}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>      
+                    </figure>
+            </div>
+        </section>
+    </div>
+
+<!-- Contact section -->
+<!-- Copyright -->
+<div class="tm-section-wrap tm-copyright row"> 
+    <div class="col-12">
+        <div class="text-right">
+            Copyright 2020 Upright Company
+        </div>
+    </div>
+    </div> <!-- .tm-main -->
+        </div> <!-- .row -->
+    </div> <!-- .container-fluid -->
+    <script src="../static/js/jquery-3.4.1.min.js"></script> <!-- https://jquery.com/ -->
+    <script src="../static/js/jquery.singlePageNav.min.js"></script>
+    <!-- https://github.com/ChrisWojcik/single-page-nav -->
+    <script src="../static/js/parallax/parallax.min.js"></script> <!-- https://pixelcog.github.io/parallax.js/ -->
+    <script src="../static/js/imagesloaded.pkgd.min.js"></script> <!-- https://imagesloaded.desandro.com/ -->
+    <script src="../static/js/isotope.pkgd.min.js"></script> <!-- https://isotope.metafizzy.co/ -->
+    <script src="../static/js/jquery.magnific-popup.min.js"></script>
+    <!-- https://dimsemenov.com/plugins/magnific-popup/ -->
+    <script src="../static/slick/slick.min.js"></script> <!-- https://kenwheeler.github.io/slick/ -->
+    <script src="../static/js/templatemo-script.js"></script>
+    
+</body>
+
+</html>
