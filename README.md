@@ -74,8 +74,8 @@
 (챗봇 내용)
 
 ## 🗃️ ERD
-
-![image](https://github.com/PlaydataFinal/Final_project/assets/149549639/5d61004e-ea21-41bd-b9d1-9996d8713ff5)
+만들다 말았음
+![만들다 말았음](https://github.com/PlaydataFinal/Final_project/assets/149549639/5d61004e-ea21-41bd-b9d1-9996d8713ff5)
 
 ## 🏗️ 시스템 아키텍처
 
