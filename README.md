@@ -103,8 +103,8 @@
 
 | 분류 | 항목 |
 |---|---|
-| FRONT-END | Kakao Map, GEMINI, HTML, CSS |
-| BACK-END | Django, Python, MySQL(Maria DB) |
+| FRONT-END | Kakao Map, Naver Maps, GEMINI, HTML, CSS |
+| BACK-END | Django, Python, MySQL(Maria DB), Kakao,Naver,Google Login API |
 | DATA | Python, MySQL(Maria DB), spark |
 | CI/CD | Docker, AWS, Airflow, Hadoop |
 | 협업 | Slack |
