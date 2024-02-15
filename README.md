@@ -1,4 +1,4 @@
-![image](https://github.com/PlaydataFinal/Final_project/assets/149549639/5d61004e-ea21-41bd-b9d1-9996d8713ff5)# 🚀 Final Project
+# 🚀 Final Project
 
 ## 📚 목차
 
@@ -75,7 +75,7 @@
 
 ## 🗃️ ERD
 
-(ERD 내용)
+![image](https://github.com/PlaydataFinal/Final_project/assets/149549639/5d61004e-ea21-41bd-b9d1-9996d8713ff5)
 
 ## 🏗️ 시스템 아키텍처
 
