@@ -1,4 +1,4 @@
-![image](https://github.com/PlaydataFinal/Final_project/assets/149549639/e922191b-83a9-46bd-87c3-de38fbaafb78)# 🚀 Final Project
+🚀 Final Project
 
 ## 📚 목차
 
@@ -83,8 +83,7 @@
 
 ## 🏗️ 시스템 아키텍처
 
-![이미지 설명](https://files.slack.com/files-pri/T05M51ACQGK-F06HJU7GSLB/d2__2_.png)
-
+![시스템 아키텍처](https://github.com/PlaydataFinal/Final_project/assets/149549639/e922191b-83a9-46bd-87c3-de38fbaafb78)# 
 
 ## 💻 기술 스택
 
