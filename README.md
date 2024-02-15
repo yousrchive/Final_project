@@ -92,8 +92,8 @@
 
 - [ FRONT-END ]: Kakao Map, GEMINI, HTML, CSS
 - [ BACK-END ]: Django, Python, MySQL(Maria DB)
-- [DATA SCIENTIST]:Python, MySQL(Maria DB) ,spark, hadoop, aws
-- [ CI/CD ]: Docker, AWS, Airflow
+- [DATA]:Python, MySQL(Maria DB) ,spark
+- [ CI/CD ]: Docker, AWS, Airflow, Hadoop
 - [협업] : Slack
 
 ## 🎈 결과물
