@@ -71,7 +71,10 @@
 
 ## 💬 챗봇
 
-(챗봇 내용)
+![001](https://github.com/PlaydataFinal/Final_project/assets/147587058/4a480aa5-5488-4923-8350-61bd02245fdb)
+![002](https://github.com/PlaydataFinal/Final_project/assets/147587058/d5826717-4c6c-4f84-8c47-99f85b138579)
+![003](https://github.com/PlaydataFinal/Final_project/assets/147587058/d793e093-79b9-4359-b8d4-e873a751aa48)
+
 
 ## 🗃️ ERD
 만들다 말았음
