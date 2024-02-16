@@ -59,7 +59,48 @@
 
 ## 🌐 API 설계서
 
-(API 설계서 내용)
+### 네이버 Maps API
+- **기능**: 지도 표시, 주소 검색, 길 찾기 등
+- **요청 URL**: `https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode`
+- **요청 방식**: GET
+- **요청 파라미터**: `query` (주소)
+- **응답 형식**: JSON
+- **에러 코드**: 401 (인증 실패), 404 (찾을 수 없음)
+
+### 카카오 API
+- **기능**: 주소 검색, 길 찾기, 키워드 검색 등
+- **요청 URL**: `https://dapi.kakao.com/v2/local/search/address.json`
+- **요청 방식**: GET
+- **요청 파라미터**: `query` (검색어)
+- **응답 형식**: JSON
+- **에러 코드**: 401 (인증 실패), 404 (찾을 수 없음)
+
+### 네이버, 카카오, 구글 소셜로그인 API
+- **기능**:사용자 회원가입 및 로그인 기능
+- **요청 URL**:
+  - 네이버: `https://nid.naver.com/oauth2.0/authorize`
+  - 카카오: `https://kauth.kakao.com/oauth/authorize`
+  - 구글: `https://accounts.google.com/o/oauth2/auth`
+- **요청 방식**: GET
+- **요청 파라미터**: `client_id`, `redirect_uri`, `response_type`, `scope`
+- **응답 형식**: JSON
+- **에러 코드**: 400 (잘못된 요청), 401 (인증 실패)
+
+### GEMINI-Pro API
+- **기능**: 챗봇 기능
+- **요청 URL**: `https://api.gemini.com/v1/pubticker/:symbol`
+- **요청 방식**: GET
+- **요청 파라미터**: `symbol` (디지털 자산 심볼)
+- **응답 형식**: JSON
+- **에러 코드**: 400 (잘못된 요청), 403 (권한 없음), 404 (찾을 수 없음)
+
+### UnSplash API
+- **기능**: 무료 이미지 검색 및 다운로드
+- **요청 URL**: `https://api.unsplash.com/photos/random`
+- **요청 방식**: GET
+- **요청 파라미터**: `query` (검색어)
+- **응답 형식**: JSON
+- **에러 코드**: 403 (요청 초과), 404 (찾을 수 없음```
 
 ## 📋 데이터 명세서
 
