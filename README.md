@@ -131,7 +131,7 @@
 | BACK-END | Django, Python, MySQL(Maria DB), Kakao,Naver,Google Login API |
 | DATA | Python, MySQL(Maria DB), spark, hadoop |
 | CI/CD | Docker, AWS, Airflow |
-| 협업 | Slack |
+| 협업 | Slack, Git |
 
 ## 🎈 결과물
 
