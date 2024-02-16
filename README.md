@@ -117,6 +117,10 @@
 
 ![시스템 아키텍처](https://github.com/PlaydataFinal/Final_project/assets/149549639/e922191b-83a9-46bd-87c3-de38fbaafb78) 
 
+- airflow(t2.small*3): 웹스크래핑 시간이 셀레니움으로 동작하기에 시간이 많이 걸리므로 3대의 airflow서버를 구성하여 병렬처리로 관광지, 음식점, 숙박업소에 대해 데이터 수집 및 자동화
+- hadoop cluster(t2.Large*3, t2.medium*1): 대용량의 학습용 이미지 데이터를 필요할 것으로 예상되어 3대의 데이터 노드를 구성 client서버로 관리
+- colab(ML): 챗봇과 추천시스템을 학습시키는데 있어서 비용이 많이 발생할 것으로 예상되어 하둡 파일을 구글 코랩에 올려서 학습 하는것을 구상중
+- docker(t2.Large): 개발환경을 좀 더 원활하고 빠르게 작업하기위해 도커 환경에서 was,web, mariadb를 구축
 ## 📄 데이터 명세서
 (내용 추후 추가)
 ## 💻 기술 스택
