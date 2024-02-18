@@ -57,6 +57,7 @@
 *추천 서비스 정의
 유저가 4개 정도의 선호하는 관광지를 고르면 그와 유사한 관광지 몇몇을 추천해줌.
 
+
 *모델 설계 1
 
 1123123
@@ -67,6 +68,7 @@
 Cold start
 유저 정보나 선택 정보가 없어서 Collaborative Filtering을 적용하기 힘들다. Content-Based Filtering을 채택. 모델 설계1 은 Content-Based Filtering 중 OneHotEncoding 방식. 모델 설계2, 3은 Embeding 방식.
 
+
 *모델 설계 2
 
 123123123
@@ -76,6 +78,7 @@ Cold start
 문장 유사도와 비슷한 맥락으로 관광지들마다 태그들이 달려있다는 사실만으로 유사도를 알 수 있다고 생각함.
 
 모델 설계1, 2는 배치 자동화를 통한 모델 업데이트
+
 
 *모델 설계3
 
