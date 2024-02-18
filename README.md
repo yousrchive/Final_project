@@ -60,7 +60,8 @@
 
 *모델 설계 1
 
-1123123
+![image1](https://github.com/PlaydataFinal/Final_project/assets/145752714/b1200ef5-622c-4b03-b121-afc6d43744fc)
+
 
 관광지에 대한 여러 정보를 수집 -> columns
 관광지에 대한 메타 데이터 테이블을 형성
