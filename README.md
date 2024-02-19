@@ -107,7 +107,7 @@ Cold start
   ![002](https://github.com/PlaydataFinal/Final_project/assets/147587058/d5826717-4c6c-4f84-8c47-99f85b138579)
   ![003](https://github.com/PlaydataFinal/Final_project/assets/147587058/d793e093-79b9-4359-b8d4-e873a751aa48)
 
-![003](https://github.com/PlaydataFinal/Final_project/assets/147587058/078370b0-901f-4659-b765-f9a67fd00196)
+-------
 ![004](https://github.com/PlaydataFinal/Final_project/assets/147587058/2be2787b-af39-4caf-8c34-2605d40965ed)
 ![005](https://github.com/PlaydataFinal/Final_project/assets/147587058/fd49b37b-e290-4637-b651-dcdd07ac4961)
 
