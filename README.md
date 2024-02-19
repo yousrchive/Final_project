@@ -80,7 +80,8 @@ Cold start
 
 어휘집 구축 
 
-![image](https://github.com/PlaydataFinal/Final_project/assets/145752714/9bb50880-b880-4744-99fe-7441718979e8)
+![image](https://github.com/PlaydataFinal/Final_project/assets/145752714/55754003-7438-4799-8d9e-72f2be364b53)
+
 
 
 문장 유사도와 비슷한 맥락으로 관광지들마다 태그들이 달려있다는 사실만으로 유사도를 알 수 있다고 생각함.
