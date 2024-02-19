@@ -61,7 +61,8 @@
 
 *모델 설계 1
 
-![image1](https://github.com/PlaydataFinal/Final_project/assets/145752714/b1200ef5-622c-4b03-b121-afc6d43744fc)
+![image](https://github.com/PlaydataFinal/Final_project/assets/145752714/6e35cbec-2fd4-4109-85d5-be209552698b)
+
 
 
 관광지에 대한 여러 정보를 수집 -> columns
@@ -73,7 +74,8 @@ Cold start
 
 *모델 설계 2
 
-123123123
+![image](https://github.com/PlaydataFinal/Final_project/assets/145752714/39618555-b2cd-45a3-bb11-3f7cc04ee1a1)
+
 
 단어집 논문 소개
 
@@ -84,13 +86,12 @@ Cold start
 
 *모델 설계3
 
-123123123
+![image](https://github.com/PlaydataFinal/Final_project/assets/145752714/dbd0094f-5fa3-4528-a1b9-6fc28594ec00)
+
 
 모델 설계 2, 3의 데이터는 성격이 다르다. 
 2는 자유도 높고 주관적 특성을 담고 있으며 자유도가 높은 low-level 데이터.
 3은 제주관광공사에서 도메인 지식에 따라 labeling한 정제된 데이터.
-Ex) 2
-3
 
 ![image](https://github.com/PlaydataFinal/Final_project/assets/147587058/825973e0-13e1-4af1-a24c-8bcfa3087f49)
 
