@@ -92,6 +92,7 @@ Cold start
 Ex) 2
 3
 
+![image](https://github.com/PlaydataFinal/Final_project/assets/147587058/825973e0-13e1-4af1-a24c-8bcfa3087f49)
 
 
   ### 💬 챗봇
