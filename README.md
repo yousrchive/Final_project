@@ -70,6 +70,7 @@
 
 Cold start
 유저 정보나 선택 정보가 없어서 Collaborative Filtering을 적용하기 힘들다. Content-Based Filtering을 채택. 모델 설계1 은 Content-Based Filtering 중 OneHotEncoding 방식. 모델 설계2, 3은 Embeding 방식.
+![image](https://github.com/PlaydataFinal/Final_project/assets/147587058/825973e0-13e1-4af1-a24c-8bcfa3087f49)
 <br><br>
 
 *모델 설계 2
@@ -93,7 +94,7 @@ Cold start
 2는 자유도 높고 주관적 특성을 담고 있으며 자유도가 높은 low-level 데이터.
 3은 제주관광공사에서 도메인 지식에 따라 labeling한 정제된 데이터.
 
-![image](https://github.com/PlaydataFinal/Final_project/assets/147587058/825973e0-13e1-4af1-a24c-8bcfa3087f49)
+
 
 
   ### 💬 챗봇
