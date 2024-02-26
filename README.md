@@ -163,7 +163,7 @@ Cold start
 
 ## 🏗️ 시스템 아키텍처
 
-![시스템 아키텍처](https://github.com/PlaydataFinal/Final_project/assets/149549639/e922191b-83a9-46bd-87c3-de38fbaafb78) 
+![시스템 아키텍처](![image](https://github.com/PlaydataFinal/Final_project/assets/149549639/9d8aa978-73c7-4505-ae04-5987f79eca32)) 
 
 - airflow(t2.small*3): 웹스크래핑 파이썬 셀레니움으로 동작하기에 시간이 많이 걸리므로 3대의 airflow서버를 구성하여 병렬처리로 관광지, 음식점, 숙박업소에 대해 데이터 수집 및 전처리 자동화
 - hadoop cluster(t2.Large*3, t2.medium*1): 대용량의 학습용 이미지 데이터를 필요할 것으로 예상되어 3대의 데이터 노드를 구성 client서버로 관리
