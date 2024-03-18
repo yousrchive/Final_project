@@ -24,7 +24,7 @@
 - 
 ## ⏰ 프로젝트 기간
 
-24년 1월 8일 ~ 24년 3월 22일
+24년 2월 19일 ~ 24년 3월 22일
 
 ## 👥 팀원 소개
 
@@ -32,8 +32,8 @@
 |---|---|
 | 구주완(팀장) | 데이터 엔지니어(클라우드 기반 서버 구축, 데이터 수집 자동화) |
 | 이슬희 | 데이터 엔지니어 (클라우드 기반 서버 구축, 데이터 수집 자동화) |
-| 최상윤 | 데이터 사이언티스트(데이터 수집, 챗봇 모델 개발) |
-| 김태현 | 데이터 사이언티스트(추천시스템 개발) |
+| 최상윤 | 데이터 사이언티스트(데이터 수집, 챗봇 모델 개발, 이미지 추천시스템,관광지 추천시스템) |
+| 김태현 | 데이터 사이언티스트(이미지 추천시스템 개발) |
 | 이유정 | 데이터 사이언티스트(챗봇 모델 개발) |
 | 김겨레 | 백엔드 & 프론트엔드(웹 설계 및 기능 구현) |
 
@@ -54,9 +54,9 @@
 ## 📄 모델 설계서
   ### 🎉 추천시스템
 
-*추천 서비스 정의
+*이미지 추천 서비스 정의
 
-유저가 4개 정도의 선호하는 관광지를 고르면 그와 유사한 관광지 몇몇을 추천해줌.
+유저가 3개 정도의 선호하는 관광지를 고르면 그와 유사한 관광지 몇몇을 추천해줌.
 <br><br>
 
 *모델 설계 1
@@ -113,14 +113,6 @@ Cold start
 
 ## 🌐 API 설계서
 
-### 네이버 Maps API
-- **기능**: 지도 표시, 주소 검색, 길 찾기 등
-- **요청 URL**: `https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode`
-- **요청 방식**: GET
-- **요청 파라미터**: `query` (주소)
-- **응답 형식**: JSON
-- **에러 코드**: 401 (인증 실패), 404 (찾을 수 없음)
-
 ### 카카오 API
 - **기능**: 주소 검색, 길 찾기, 키워드 검색 등
 - **요청 URL**: `https://dapi.kakao.com/v2/local/search/address.json`
@@ -148,15 +140,6 @@ Cold start
 - **응답 형식**: JSON
 - **에러 코드**: 400 (잘못된 요청), 403 (권한 없음), 404 (찾을 수 없음)
 
-### UnSplash API
-- **기능**: 무료 이미지 검색 및 다운로드
-- **요청 URL**: `https://api.unsplash.com/photos/random`
-- **요청 방식**: GET
-- **요청 파라미터**: `query` (검색어)
-- **응답 형식**: JSON
-- **에러 코드**: 403 (요청 초과), 404 (찾을 수 없음```
-
-
 ## 🗃️ ERD
 만들다 말았음
 ![만들다 말았음](https://github.com/PlaydataFinal/Final_project/assets/149549639/5d61004e-ea21-41bd-b9d1-9996d8713ff5)
@@ -166,9 +149,6 @@ Cold start
 ![시스템 아키텍처](![image](https://github.com/PlaydataFinal/Final_project/assets/149549639/be32c290-de60-4018-b4d5-8544e846b33b)
 )
 
-- airflow(t2.small*3): 웹스크래핑 파이썬 셀레니움으로 동작하기에 시간이 많이 걸리므로 3대의 airflow서버를 구성하여 병렬처리로 관광지, 음식점, 숙박업소에 대해 데이터 수집 및 전처리 자동화
-- hadoop cluster(t2.Large*3, t2.medium*1): 대용량의 학습용 이미지 데이터를 필요할 것으로 예상되어 3대의 데이터 노드를 구성 client서버로 관리
-- colab(ML): 챗봇과 추천시스템을 학습시키는데 있어서 비용이 많이 발생할 것으로 예상되어 하둡 파일을 구글 코랩에 올려서 학습 하는것을 구상중
 - docker(t2.Large): 개발환경을 좀 더 원활하고 빠르게 작업하기위해 도커 환경에서 was,web, mariadb를 구축
 ## 📄 데이터 명세서
 (내용 추후 추가)
@@ -176,10 +156,10 @@ Cold start
 
 | 분류 | 항목 |
 |---|---|
-| FRONT-END | Kakao Map, Naver Maps, GEMINI, HTML, CSS |
-| BACK-END | Django, Python, MySQL(Maria DB), Kakao,Naver,Google Login API |
-| DATA | Python, MySQL(Maria DB), spark, hadoop |
-| CI/CD | Docker, AWS, Airflow |
+| FRONT-END | KAKAO API, HTML, CSS |
+| BACK-END | Django, Python, Kakao API, GEMINI-Pro API |
+| DATA | Python, MySQL(Maria DB), MongoDB |
+| CI/CD | Docker, AWS S3 |
 | 협업 | Slack, Git |
 
 ## 🎈 결과물
