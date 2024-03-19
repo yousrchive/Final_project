@@ -64,9 +64,7 @@ Ai Hub에서 여행 방문지, 경로 데이터를 발견하여 Collaborative Fi
 
 ![image](https://github.com/PlaydataFinal/Final_project/assets/145752714/0a474f48-b14c-42e9-8289-e8c4247a826d)
 
-<br><br>
-
-
+<br>
 
 #### 태그 유사도
 insight
@@ -88,9 +86,7 @@ insight
 
 ![image](https://github.com/PlaydataFinal/Final_project/assets/145752714/ba04be0c-9b71-4321-946a-215aff36b22d)
 
-<br><br>
-
-
+<br>
 
 #### 텍스트 유사도
 태그 유사도 모델링에서 사용한 데이터는 제주관광공사에서 도메인 지식에 따라 labeling한 정제된 태그 데이터이다. 관광지에 대한 정성적인 정보들을 더 잘 담고 있는 자유도 높은 low-level 데이터로부터 유사도를 도출하고 싶었다.
@@ -104,7 +100,7 @@ insight
 
 그러나 데이터 merge 시 난점때문에 활용하기 어려웠다. 그래서 텍스트 유사도 모델링의 데이터로  visitjeju에 관광지별 상세설명 글을 채택했다. 텍스트 유사도 모델링은 챗봇 서비스로 적용하였다.
 
-<br><br>
+<br>
 
 #### 이미지 유사도
 ##### reference
@@ -120,7 +116,7 @@ insight
 데이터셋은 visitjeju의 관광지별 대표이미지 한 장씩을 크롤링해서 활용했다. 이 1473개의 관광지별 이미지에 VGG16을 적용해 이미지 vector를 도출하고 백터를 데이터프레임의 새로운 컬럼으로 만들었다. 이 데이터프레임을 db에 저장해놓는다. 서비스 시에는 유저가 관광지 이미지 10-20개 중에서 자기 취향인 관광지 이미지 4개를 고른다. 이 4개의 목록을 받아서 선택한 관광지의 백터와 1473개의 관광지의 백터 간 유사도를 계산한 뒤 sorting하여 유사한 관광지를 도출하는 방식을 만들었다.
 ![image](https://github.com/PlaydataFinal/Final_project/assets/145752714/beaaef5b-8405-4cc5-90a2-eb5c72ba6f0e)
 
-<br><br>
+<br>
 
 ##### 모델 학습 및 추론 결과
 
@@ -134,7 +130,7 @@ insight
 서비스 개발 코드를 통해 총 4x1473 개의 계산된 유사도를 얻을 수 있다. 이를 sorting한 뒤 [4:9]로 슬라이싱하면 유저가 선택한 관광지 4개와 유사한 관광지 5개를 도출할 수 있다.<br>
 ![image](https://github.com/PlaydataFinal/Final_project/assets/145752714/495f98cc-2463-477e-995c-202c542a9db3)
 
-<br><br>
+<br>
 
 ##### 벡터 저장 방식
 1473개 이미지의 백터를 구한 뒤 db에 저장해놓는 적절한 방식을 고민했다. 기존에 구축해놓은 관계형db인 mariadb에 테이블 형식으로 저장할 수도 있겠다. 다만 용량이 비교적 크며 메모리를 많이 잡아먹을 것이고 그래서 조회에 시간이 더 걸린다는 맹점이 존재했다. 따라서 비정형 NoSQL 중 몽고db에 백터를 저장할 것을 구상했다. 테이블 형태가 아니라 백터 같은 비관계형 데이터 베이스를 지원하기 때문. 물론 결과적으로 몽고db의 저장 공간 부족으로 이미지 백터는 csv 파일로 저장해서 필요할 때 사용했다.
@@ -142,20 +138,19 @@ insight
 ![image](https://github.com/PlaydataFinal/Final_project/assets/145752714/c753f31b-84ed-4ebf-aaa2-a01fa930d7f2)
 
 
-<br><br>
+<br>
 
 
 ##### 모델 서빙 플로우 설계
 ![image](https://github.com/PlaydataFinal/Final_project/assets/145752714/299fe36f-f400-4a70-a145-48e207289051)
 
 추천 모델 서빙 플로우. 유사도 행렬이 아니라 백터를 db에 저장해놓기로 했기 때문에 혹시 서비스 코드 실행 시 유사도 계산 및 sorting에 시간이 많이 걸리는지 관찰해야했다. 다행히 시간이 오래 걸리는 이슈는 없었다.
-<br><br>
+<br>
 
 
 ##### 추천서비스 로직 구성
-<br>
 이는 4x1473개의 계산된 유사도를 sorting한 것이다. row3에 대해서만 즉, 결국 한 관광지에 대한 추천만 하게 되는 문제가 있었다. 발라드, 힙합, 락 을 골랐는데 결국 발라드와 유사한 것들만 추천하게 되는 상황이었다. 편향 문제 개선을 위해 각각 추천해주는 방식으로 바꿨다.
-<br><br>
+<br>
 
 
 ##### Evaluation과 Future Work
