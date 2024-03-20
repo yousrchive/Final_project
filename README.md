@@ -181,7 +181,7 @@ insight
 
 ### 카카오 API
 - **기능**: 키워드 검색을 통한 관광지 위치 조회 및 상세페이지 이동 가능 
-- **요청 URL**: `https://dapi.kakao.com/v2/local/search/address.json`
+- **요청 URL**: `https://dapi.kakao.com/v2/maps/sdk.js?appkey=5b475d258fb5e345e3944cb9418a3f5b&libraries=services`
 - **요청 방식**: GET
 - **요청 파라미터**: `query` (검색어)
 - **응답 형식**: JSON
@@ -292,8 +292,8 @@ insight
 
 | 분류 | 항목 |
 |---|---|
-| FRONT-END | KAKAO API, HTML, CSS |
-| BACK-END | Django, Python, Kakao API, GEMINI-Pro API |
+| FRONT-END | Tmap API,KAKAO API, HTML, CSS |
+| BACK-END | Django, Python, Kakao API, GEMINI-Pro API, Tmap API |
 | DATA | Python, MySQL(Maria DB), MongoDB |
 | CI/CD | Docker, AWS S3 |
 | 협업 | Slack, Git |
