@@ -212,8 +212,7 @@ insight
 
 ## 🏗️ 시스템 아키텍처
 
-![시스템 아키텍처](![image](https://github.com/PlaydataFinal/Final_project/assets/149549639/be32c290-de60-4018-b4d5-8544e846b33b)
-)
+![시스템 아키텍처](![웹아키택처](https://github.com/PlaydataFinal/Final_project/assets/102157695/bfbffeb6-0499-4a1b-bc66-59232983cd82)
 
 - docker(t2.2xLarge): 개발환경을 좀 더 원활하고 빠르게 작업하기위해 도커 환경에서 was,web, mariadb를 구축
 - nginx(web server):
