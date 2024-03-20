@@ -180,15 +180,15 @@ insight
 ## 🌐 API 설계서
 
 ### 카카오 API
-- **기능**: 주소 검색, 길 찾기, 키워드 검색 등
+- **기능**: 키워드 검색을 통한 관광지 위치 조회 및 상세페이지 이동 가능 
 - **요청 URL**: `https://dapi.kakao.com/v2/local/search/address.json`
 - **요청 방식**: GET
 - **요청 파라미터**: `query` (검색어)
 - **응답 형식**: JSON
 - **에러 코드**: 401 (인증 실패), 404 (찾을 수 없음)
 
-### 네이버, 카카오, 구글 소셜로그인 API
-- **기능**:사용자 회원가입 및 로그인 기능
+### tmap API
+- **기능**:키워드를 통한 길찾기 (여러가지 옵션 포함)
 - **요청 URL**:
   - 네이버: `https://nid.naver.com/oauth2.0/authorize`
   - 카카오: `https://kauth.kakao.com/oauth/authorize`
@@ -215,7 +215,28 @@ insight
 ![시스템 아키텍처](![image](https://github.com/PlaydataFinal/Final_project/assets/149549639/be32c290-de60-4018-b4d5-8544e846b33b)
 )
 
-- docker(t2.Large): 개발환경을 좀 더 원활하고 빠르게 작업하기위해 도커 환경에서 was,web, mariadb를 구축
+- docker(t2.2xLarge): 개발환경을 좀 더 원활하고 빠르게 작업하기위해 도커 환경에서 was,web, mariadb를 구축
+- nginx(web server):
+  역할: 역방향 프록시 및 로드 밸런서 역할을 수행합니다.
+  기능: 클라이언트로부터의 HTTP 요청을 받아 백엔드 웹 서버(web1, web2, web3)로 전달하며, 로드 밸런싱을 통해 요청을 분산합니다. 또한 정적 파일을 제공하기 위해 정적 파일 볼륨을 마운트하고 있습니다.
+- web1, web2, web3 (was server):
+  역할: Django 애플리케이션을 실행하는 웹 서버 역할을 합니다.
+  기능: Django 애플리케이션을 실행하고 클라이언트로부터의 HTTP 요청을 처리합니다. 각각의 웹 서버는 Gunicorn을 사용하여 Django 애플리케이션을 실행하고 있습니다. 각 웹 서버는 다른 포트(8001, 8002, 8003)에서 실행됩니다.
+- rabbitmq:
+  역할: 메시지 큐 시스템인 RabbitMQ를 실행합니다.
+  기능: 비동기 작업 처리를 위해 Celery와 함께 사용됩니다. Celery 작업 큐와 브로커로서의 역할을 합니다.
+- redis:
+  역할: 인메모리 데이터 구조 스토어인 Redis를 실행합니다.
+  기능: 데이터 캐싱 및 세션 관리 등 다양한 용도로 사용될 수 있습니다.
+- celery_worker:
+  역할: Celery 워커로 비동기 작업을 처리합니다.
+  기능: Celery를 사용하여 백그라운드에서 비동기 작업을 처리합니다. RabbitMQ 브로커와 통신하여 작업을 받아 처리합니다.
+- celery_beat:
+  역할: Celery 스케줄러로 주기적인 작업을 실행합니다.
+  기능: Celery Beat를 사용하여 정기적으로 실행되어야 하는 작업을 스케줄링합니다.
+- flower:
+  역할: Celery 모니터링 도구인 Flower를 실행합니다.
+  기능: Celery 작업 및 큐의 상태를 모니터링하고 관리할 수 있는 웹 인터페이스를 제공합니다.
 ## 📄 데이터 명세서
 
 ### 1. 관광지(음식점, 숙박) 기본 데이터
