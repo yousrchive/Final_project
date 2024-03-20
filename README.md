@@ -207,12 +207,12 @@ insight
 - **에러 코드**: 400 (잘못된 요청), 403 (권한 없음), 404 (찾을 수 없음)
 
 ## 🗃️ ERD
-!(<img width="1131" alt="스크린샷 2024-03-20 오후 12 44 56" src="https://github.com/PlaydataFinal/Final_project/assets/102157695/d7aef3ee-3ea7-46b9-9578-e951e36980fb">
+<img width="1131" alt="스크린샷 2024-03-20 오후 12 44 56" src="https://github.com/PlaydataFinal/Final_project/assets/102157695/d7aef3ee-3ea7-46b9-9578-e951e36980fb">
 )
 
 ## 🏗️ 시스템 아키텍처
 
-![시스템 아키텍처](![웹아키택처](https://github.com/PlaydataFinal/Final_project/assets/102157695/bfbffeb6-0499-4a1b-bc66-59232983cd82)
+(![웹아키택처](https://github.com/PlaydataFinal/Final_project/assets/102157695/bfbffeb6-0499-4a1b-bc66-59232983cd82)
 
 - docker(t2.2xLarge): 개발환경을 좀 더 원활하고 빠르게 작업하기위해 도커 환경에서 was,web, mariadb를 구축
 - nginx(web server):
