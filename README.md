@@ -142,7 +142,8 @@ insight
 
 
 ##### 모델 서빙 플로우 설계
-![image](https://github.com/PlaydataFinal/Final_project/assets/145752714/299fe36f-f400-4a70-a145-48e207289051)
+![image](https://github.com/PlaydataFinal/Final_project/assets/145752714/a8348bdf-82f6-4212-8a64-40e29cda859b)
+
 
 추천 모델 서빙 플로우. 유사도 행렬이 아니라 백터를 db에 저장해놓기로 했기 때문에 혹시 서비스 코드 실행 시 유사도 계산 및 sorting에 시간이 많이 걸리는지 관찰해야했다. 다행히 시간이 오래 걸리는 이슈는 없었다.
 <br><br>
@@ -176,7 +177,13 @@ insight
 -------
 ![004](https://github.com/PlaydataFinal/Final_project/assets/147587058/2be2787b-af39-4caf-8c34-2605d40965ed)
 ![005](https://github.com/PlaydataFinal/Final_project/assets/147587058/fd49b37b-e290-4637-b651-dcdd07ac4961)
-
+<br><br>
+##### 챗봇 모델 설계
+![마](https://github.com/PlaydataFinal/Final_project/assets/145752714/533c6fef-1018-4cad-ae13-94e4f0fe6d8e)
+<br><br>
+##### 챗봇 모델 서빙 플로우
+![마용](https://github.com/PlaydataFinal/Final_project/assets/145752714/43f1428b-8c53-4a23-b244-9180b9785694)
+<br><br>
 ## 🌐 API 설계서
 
 ### 카카오 API
