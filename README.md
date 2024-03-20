@@ -208,7 +208,8 @@ insight
 
 ## 🗃️ ERD
 만들다 말았음
-![만들다 말았음](https://github.com/PlaydataFinal/Final_project/assets/149549639/5d61004e-ea21-41bd-b9d1-9996d8713ff5)
+!(<img width="1131" alt="스크린샷 2024-03-20 오후 12 44 56" src="https://github.com/PlaydataFinal/Final_project/assets/102157695/d7aef3ee-3ea7-46b9-9578-e951e36980fb">
+)
 
 ## 🏗️ 시스템 아키텍처
 
